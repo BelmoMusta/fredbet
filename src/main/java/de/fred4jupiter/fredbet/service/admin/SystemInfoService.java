@@ -20,23 +20,23 @@ public class SystemInfoService {
 
     private static final Logger LOG = LoggerFactory.getLogger(SystemInfoService.class);
 
-    private final BuildProperties buildProperties;
+    //private final BuildProperties buildProperties;
 
     private final Environment environment;
 
     private final SortedMap<String, Object> allProperties = new TreeMap<>();
 
     @Autowired
-    public SystemInfoService(BuildProperties buildProperties, Environment environment) {
-        this.buildProperties = buildProperties;
+    public SystemInfoService(  Environment environment) {
+      //  this.buildProperties = buildProperties;
         this.environment = environment;
 
         addStaticProperties();
     }
 
     private void addStaticProperties() {
-        allProperties.put("build.time", buildProperties.getTime());
-        allProperties.put("build.version", buildProperties.getVersion());
+        //allProperties.put("build.time", buildProperties.getTime());
+     //   allProperties.put("build.version", buildProperties.getVersion());
 
         addSpringProfiles();
         addEnvProperty("spring.datasource.hikari.driver-class-name");
